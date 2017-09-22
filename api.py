@@ -1,6 +1,7 @@
 import os.path
 import sys
-
+import json
+import pprint
 try:
     import apiai
 except ImportError:
@@ -8,9 +9,8 @@ except ImportError:
         os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir)
     )
     import apiai
-
-CLIENT_ACCESS_TOKEN = 'c45478c1cf9a4f9d81fa0739e55e4fdf' 
-
+### input the api.ai client access token id
+CLIENT_ACCESS_TOKEN = 'f8d86d6642ca4aa5a78dc5e830bbf7d0'
 
 def main():
     ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
@@ -19,15 +19,15 @@ def main():
 
     request.lang = 'en'  # optional, default value equal 'en'
 
-    request.session_id = "e15aa00a-2ebb-45f1-bbaa-9dc0f14d8e56"
+    #request.session_id = "e15aa00a-2ebb-45f1-bbaa-9dc0f14d8e56"
+    print('say something ...')
+    request.query = raw_input()
 
-    request.query = "give me a song"
-
-    response = request.getresponse()
+    response = json.loads(request.getresponse().read())
+    speech = response['result']['fulfillment']['messages'][0]['speech'] 
     f = open('response.txt','w')
-    f.write(str(response.read()))
-    #print (response.read())
-    print ('Work.')
+    f.write(str(response))
+    print (speech)
 
 if __name__ == '__main__':
     main()
