@@ -1,0 +1,10 @@
+HUMAN:櫻花電車貓
+BOT:100減掉7等於多少?
+HUMAN:93
+BOT:再減7等於多少?
+HUMAN:86
+BOT:再減7呢?
+HUMAN:79
+BOT:再減7是多少?
+HUMAN:72
+BOT:那再減7等於多少?

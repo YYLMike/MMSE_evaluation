@@ -12,8 +12,11 @@ def main():
 	
 	for i in range(len(question_list)-1):
 		tts.speak(question_list[i])
-		print('請回答：')		
-		user_ans = stt.stt()#replace to speech later
-		f.write(user_ans+'\n')
+		print('請回答：')
+		while True:		
+			user_ans = stt.stt()
+			if(user_ans != "error"):
+				f.write(user_ans+'\n')
+				break
 if __name__ == '__main__':
     main()

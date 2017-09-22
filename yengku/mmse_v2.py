@@ -472,8 +472,8 @@ def dialog():
     while True:
         response = ''
         f = open(time.strftime("%Y-%m-%d %H%M", time.localtime()) + '.txt', 'a')
-
-        statement = input("")
+        statement = stt.stt()
+        #statement = input("")
         if question != '':
             response = completeAns(statement, question,context)
         question = ''

@@ -1,0 +1,10 @@
+HUMAN:9月22日星期五
+BOT:現在是甚麼季節?
+HUMAN:秋季
+BOT:這裡是哪個縣市
+HUMAN:台北市
+BOT:這裡是甚麼地方?
+HUMAN:仁愛醫院
+BOT:這裡是幾樓?
+HUMAN:五樓
+BOT:這裡靠近哪一條路?

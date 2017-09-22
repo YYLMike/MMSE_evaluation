@@ -1,5 +1,7 @@
 #!/usr/bin/python
 #coding:utf-8
+import tts
+import speech_to_text as stt
 import string
 import re
 import random
@@ -311,18 +313,10 @@ questions = {
     'attention4':'再減7是多少?',
     'attention5':'那再減7等於多少?',
     'shortmemory':'剛才我有告訴你三樣東西，要你從頭說一遍，請你想想看這三個東西是什麼並告訴我？ 不用按照順序，你想到的就告訴我。',
-    'call':'請你說出在過去的生活經驗中，會有機會接觸過或使用過的物品的名稱。',
-    'repeat':'我要你跟著我說一句話，請你仔細聽，等我說完之後，你就一字不差的把這句話說一遍',
-    'sentance':'沒來有往不自在',
-    'read':'請你念出紙上的動作並照做一遍',
-    'make':'請你造一個句子並寫下來',
-    'paint':'請你畫兩個五邊形，中間要重疊成一個四邊形',
-    'action':'現在我要請你作三件事 (或三個動作)，等我全部說完後，你再開始依照我說的順序，一個接一個作。我只能說一遍，請你仔細聽。 說完後我請你開始作才開始。',
-    'actionlist':'用你的左手來拿這張紙，將它對折一半，然後交還給我。'
 }
 
-questionlist = ['name','year','date','season','city','position','floor','street','department','memory','attention1','attention2','attention3','attention4','attention5','shortmemory','call','repeat','sentance','read','make','paint','action','actionlist']
-anslist = ['name','year','month','day','weekday','season','city','position','floor','street','department','memory','attention1','attention2','attention3','attention4','attention5','shortmemory','call','repeat','read']
+questionlist = ['name','year','date','season','city','position','floor','street','department','memory','attention1','attention2','attention3','attention4','attention5','shortmemory']
+anslist = ['name','year','month','day','weekday','season','city','position','floor','street','department','memory','attention1','attention2','attention3','attention4','attention5','shortmemory']
 
 def reflect(fragment):
     string = fragment.replace('我','你')
@@ -471,7 +465,8 @@ def findcards(pattern):
 
 def dialog():
     print('=' * 72)
-    print("您好，請問你叫甚麼名字?")
+    tts.speak("您好，請問您叫甚麼名字？")
+    #print("您好，請問你叫甚麼名字?")
     context = {}  #短期記憶
     question = questionlist.pop(0)
     while True:
@@ -486,10 +481,11 @@ def dialog():
         if questionlist:
             question = questionlist.pop(0)
             if response:
-                print(response)
+                tts.speak(response)
+                #print(response)
             response = questions[question]
         else:
-            fmmse = open('MMSE.txt', 'a')
+            fmmse = open('MMSE.txt', 'w')
             for ans in anslist:
                 fmmse.write(ans+':' + context[ans] + '\n')
             fmmse.closed
@@ -501,8 +497,8 @@ def dialog():
             leave, response = analyze(statement,context)
         else:
             leave = False
-
-        print(response)
+        tts.speak(response)
+        #print(response)
         f.write('BOT:'+response+'\n')
         f.close()
         if leave:
