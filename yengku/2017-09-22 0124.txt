@@ -1,0 +1,8 @@
+HUMAN:流域又
+BOT:現在是民國幾年?
+HUMAN:106
+BOT:現在是甚麼季節?
+HUMAN:夏天
+BOT:這裡是甚麼地方?
+HUMAN:台北市
+BOT:這裡靠近哪一條路?

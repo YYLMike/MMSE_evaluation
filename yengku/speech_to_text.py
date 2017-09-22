@@ -4,7 +4,6 @@ def stt():
 	r = sr.Recognizer()
 	r.pause_threshold = 0.5
 	with sr.Microphone(device_index=5) as source:
-		print("Say something!")
 		audio = r.listen(source)
 
 	try:

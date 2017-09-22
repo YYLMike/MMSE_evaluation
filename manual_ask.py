@@ -11,9 +11,9 @@ def main():
 	f = open('user_answer.txt','w')
 	
 	for i in range(len(question_list)-1):
-		tts.speak(question_list[i])
+		print(question_list[i])
 		print('請回答：')		
-		user_ans = stt.stt()#replace to speech later
+		user_ans = input()#replace to speech later
 		f.write(user_ans+'\n')
 if __name__ == '__main__':
     main()

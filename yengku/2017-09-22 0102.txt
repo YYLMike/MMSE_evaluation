@@ -1,0 +1,16 @@
+HUMAN:mike
+BOT:現在是民國幾年?
+HUMAN:106
+BOT:今天是幾月幾號星期幾呢?
+HUMAN:9月22日星期五
+BOT:現在是甚麼季節?
+HUMAN:夏天
+BOT:這裡是哪個縣市
+HUMAN:台北市
+BOT:這裡是甚麼地方?
+HUMAN:仁愛醫院
+BOT:這裡是幾樓?
+HUMAN:五樓
+BOT:這裡靠近哪一條路?
+HUMAN:仁愛路
+BOT:你來看甚麼科?
